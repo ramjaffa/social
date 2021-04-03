@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: burlywood;
+  color: white;
+}
+
+header div {
+  margin-top: 2vw;
+  font-size: 4vw;
+}
+
+header ul {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+
+header ul li {
+  margin: 1vh;
+}

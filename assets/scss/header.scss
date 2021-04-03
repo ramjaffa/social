@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: burlywood;
+    color: white;
+    div{
+        margin-top: 2vw;
+        font-size: 4vw;
+
+    }
+    ul{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        list-style-type: none;
+        // border: 2px solid black;
+        li{
+            margin: 1vh;
+        }
+    }
+}
