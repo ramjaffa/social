@@ -1,12 +1,13 @@
 <header>
     <div>
-        Codeial
+        <a href="/"> Codeial </a>
+        
     </div>
     
 
     <ul>
         <% if (locals.user) {%>
-            <a href="/users/profile">
+            <a href="/users/profile/<%= locals.user.id %>">
                 <li><%= user.name %></li>
             </a>
             <li>
