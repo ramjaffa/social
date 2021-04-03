@@ -8,14 +8,14 @@ const commentSchema = new mongoose.Schema({
     //coment belongs to a user
     user:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:User
+        ref:'User'
     },post:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:Post
+        ref:'Post'
     }
 },{
     timestamps:true
 })
 
-const comment = mongoose.model('Comment',commentSchema);
-module.exports = comment;
+const Comment = mongoose.model('Comment',commentSchema);
+module.exports = Comment;
