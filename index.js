@@ -4,12 +4,12 @@ const port = 8000;
 const cookieParser = require('cookie-parser');
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
-
+const passportGoogle = require('./config/passport-google-oauth2-strategy')
 //used for session cookie 
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
-
+const passportJWT = require('./config/passport-jwt-strategy')
 const MongoStore =  require('connect-mongo')(session);
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
@@ -30,7 +30,8 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
 app.use(express.static('./assets'))
-
+// make the uploads path available to the browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 //set up the viewe engine
 app.set('view engine','ejs');

@@ -1,7 +1,10 @@
 body{
     margin:0;
+    //
     /* text-align:center; */
     #layout-main{
-        height:100%;
+        border: 1px solid black;
+        // height:100%;
+        margin-bottom:250px;/* Height of footer*/
     }
 }

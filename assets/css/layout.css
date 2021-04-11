@@ -4,5 +4,7 @@ body {
 }
 
 body #layout-main {
-  height: 100%;
+  border: 1px solid black;
+  margin-bottom: 250px;
+  /* Height of footer*/
 }
