@@ -16,7 +16,10 @@
                     deletePost($(' .delete-post-button', newPost));
 
                     // call the create comment class
-                    // new PostComments(data.data.post._id);
+                    new PostComments(data.data.post._id);
+
+                    // CHANGE :: enable the functionality of the toggle like button on the new post
+                    new ToggleLike($(' .toggle-like-button', newPost));
 
                     new Noty({
                         theme: 'relax',
@@ -37,11 +40,12 @@
 
     // method to create a post in DOM
     let newPostDom = function(post){
+        // CHANGE :: show the count of zero likes on this post
         return $(`<li id="post-${post._id}">
                     <p>
                         
                         <small>
-                            <a class="delete-post-button"  href="/posts/destroy/${ post._id }">Delete</a>
+                            <a class="delete-post-button"  href="/posts/destroy/${ post._id }">X</a>
                         </small>
                        
                         ${ post.content }
@@ -49,6 +53,15 @@
                         <small>
                         ${ post.user.name }
                         </small>
+                        <br>
+                        <small>
+                            
+                                <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
+                                    0 Likes
+                                </a>
+                            
+                        </small>
+
                     </p>
                     <div class="post-comments">
                         
@@ -109,7 +122,7 @@
 
             // get the post's id by splitting the id attribute
             let postId = self.prop('id').split("-")[1]
-            // new PostComments(ypostId);
+            new PostComments(postId);
         });
     }
 
